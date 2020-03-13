@@ -85,6 +85,12 @@ module.exports = {
         name: '[name].[ext]'
       }
     }, {
+			test: /\.(mp4)(\?.*)?$/,
+			loader: 'file-loader',
+			options: {
+				name: '[name].[ext]'
+			}
+		}, {
       test: /\.scss$/,
       use: [
         'style-loader',
