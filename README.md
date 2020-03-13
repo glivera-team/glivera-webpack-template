@@ -49,13 +49,13 @@ Create your component in `/components/`
 
 5. PUG Usage:
 	1. Init component in `index.js`:
-	``` js
-	Vue.component('example-component', require('./components/Example.vue').default)
-	```
+``` js
+Vue.component('example-component', require('./components/Example.vue').default)
+```
 	2. Any pug files:
-	``` pug
-	example-component
-	```
+``` pug
+example-component
+```
 
 #### 7. How to test
 
