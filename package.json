@@ -1,5 +1,5 @@
 {
-  "name": "glivera-team-webpack-template",
+  "name": "glivera-webpack-template",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,10 +15,10 @@
   "author": "",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/glivera-team/glivera-webpack-template"
   },
   "bugs": {
-    "url": ""
+    "url": "https://github.com/glivera-team/glivera-webpack-template/issues"
   },
   "keywords": [
     "webpack",

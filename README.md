@@ -1,5 +1,5 @@
 # Glivera Team Template
-**Шаблон проекта для быстрого старта. Этот шаблон использует Webpack, Pug, Sass, Gulp
+Project template for quick start. This template uses Webpack, Pug, Sass, Gulp
 
 #### 1. Install dependencies.
 
