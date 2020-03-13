@@ -3,7 +3,7 @@ Project template for quick start. This template uses Webpack, Pug, Sass, Gulp
 
 #### 1. Install dependencies.
 
-		npm i
+    npm i
 
 #### 2. If you use link of global packages:  
 1. Install global:
@@ -16,17 +16,17 @@ Project template for quick start. This template uses Webpack, Pug, Sass, Gulp
 
 #### 3. Server with hot reload at http://localhost:8081/
 
-        npm run dev
+    npm run dev
 
 #### 4. Output will be at dist/ folder
 
-        npm run build
+    npm run build
 
 #### 5. Build svg-sprite
 
 Put your icons into /src/assets/img/icons folder & run task:
 
-        gulp svgSpriteBuild
+    gulp svgSpriteBuild
 
 #### 6. Vue
 1. Install vue
