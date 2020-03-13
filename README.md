@@ -44,11 +44,10 @@ const app = new Vue({
 #app
   //- Content
 ```
-
-##### Add Vue Components:
+4. Add Vue Components:
 Create your component in `/components/`
 
-**PUG Usage:**
+5. PUG Usage:
 1. Init component in `index.js`:
 ``` js
 Vue.component('example-component', require('./components/Example.vue').default)
