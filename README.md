@@ -48,11 +48,11 @@ const app = new Vue({
 Create your component in `/components/`
 
 5. PUG Usage:
-1. Init component in `index.js`:
+Init component in `index.js`:
 ``` js
 Vue.component('example-component', require('./components/Example.vue').default)
 ```
-2. Any pug files:
+Any pug files:
 ``` pug
 example-component
 ```
