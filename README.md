@@ -61,9 +61,9 @@ Create your component in `/components/`
 
 1. Install packages
 
-        npm i chrome-launcher fs http node-static path pixelmatch pngjs puppeteer -g
+        npm i chrome-launcher fs http node-static path pixelmatch pngjs puppeteer image-webpack-loader -g
 
-        npm link chrome-launcher fs http node-static path pixelmatch pngjs puppeteer
+        npm link chrome-launcher fs http node-static path pixelmatch pngjs puppeteer image-webpack-loader
 
 2. Open `gulpfile.js`. Uncomment "testing" task & Add all names of tested pages to array `pageList` 
 
