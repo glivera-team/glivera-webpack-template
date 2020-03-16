@@ -5,6 +5,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 const webpack = require('webpack');
+var ImageminPlugin = require('imagemin-webpack-plugin').default;
+const imageminMozjpeg = require('imagemin-mozjpeg');
 
 // Main const
 const PATHS = {
@@ -77,35 +79,12 @@ module.exports = {
         name: '[name].[ext]'
       }
     }, {
-			test: /\.(gif|png|jpe?g|svg)$/i,
-			use: [
-				'file-loader',
-				{
-					loader: 'image-webpack-loader',
-					options: {
-						mozjpeg: {
-							progressive: true,
-							quality: 65
-						},
-						// optipng.enabled: false will disable optipng
-						optipng: {
-							enabled: false,
-						},
-						pngquant: {
-							quality: [0.65, 0.90],
-							speed: 4
-						},
-						gifsicle: {
-							interlaced: false,
-						},
-						// the webp option will enable WEBP
-						webp: {
-							quality: 75
-						}
-					}
-				},
-			],
-		}, {
+      test: /\.(png|jpe?g|gif|svg)$/i,
+      loader: 'file-loader',
+      options: {
+        name: '[name].[ext]'
+      }
+    }, {
 			test: /\.(mp4)(\?.*)?$/,
 			loader: 'file-loader',
 			options: {
@@ -164,6 +143,27 @@ module.exports = {
       { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
       { from: `${PATHS.src}/static`, to: '' },
     ]),
+		new ImageminPlugin({
+			test: /\.(jpe?g|png|gif|svg)$/i,
+			disable: false,
+			pngquant: {
+				speed: 1,
+				quality: [0.95, 1]
+			},
+			svgo: {
+				removeViewBox: false
+			},
+			svgo: {
+				removeViewBox: false
+			},
+			gifsicle: {
+				interlaced: true,
+				optimizationLevel: 3
+			},
+			plugins: [
+				imageminMozjpeg({quality: 50})
+			]
+		}),
 
     // Automatic creation any html pages (Don't forget to RERUN dev server)
     ...PAGES.map(page => new HtmlWebpackPlugin({
