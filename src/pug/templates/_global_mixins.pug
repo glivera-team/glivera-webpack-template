@@ -33,6 +33,15 @@ mixin head(array)
 
 
 
+mixin image(array)
+	- alt = array.alt || ''
+	if array.picture
+		picture
+			each item in array.srcset
+				source(srcset=`${assetsImage}${item.img}`, media=item.media)
+			img(class= array.class, src=`${assetsImage}${array.img}`, alt= alt)
+	else
+		img(class= array.class, src=`${assetsImage}${array.img}`, alt= alt)
 
 //- scripts from cdn
 mixin script_cdn(array)

@@ -8,7 +8,7 @@
 
 	//remove this demo style
 	&.demo_mod {
-		@extend %global_flex_block_row_nowrap_center_center;
+		@extend %global_flex_block_column_nowrap_center_center;
 		
 		height: calc(100vh - #{$height_footer + $height_header});
 		
@@ -16,6 +16,17 @@
 		text-align: center;
 
 		background-color: $black;
+
+		a {
+			color: gold;
+		}
+
+		.section_demo_w {
+			width: 100%;
+			max-width: 30em;
+			margin-top: 3em;
+		}
+
 	}
 
 }
