@@ -1,11 +1,13 @@
 # Glivera Team Template
 Project template for quick start. This template uses Webpack, Pug, Sass, Gulp
 
-#### 1. Install dependencies.
+#### 1. Install [node.js](https://nodejs.org/)  
+
+#### 2. Install dependencies.
 
     npm i
 
-#### 2. If you use link of global packages:  
+#### 3. If you use link of global packages:  
 1. Install global:
 
         npm i @babel/core @babel/preset-env babel-loader autoprefixer copy-webpack-plugin css-loader css-mqpacker cssnano file-loader gulp gulp-cheerio gulp-replace gulp-svg-sprite gulp-svgmin html-webpack-plugin mini-css-extract-plugin node-sass postcss-loader pug pug-loader pug-plain-loader sass-loader style-loader vue-loader vue-style-loader vue-template-compiler webpack webpack-cli webpack-dev-server webpack-merge ismobilejs jquery -g  
@@ -14,21 +16,21 @@ Project template for quick start. This template uses Webpack, Pug, Sass, Gulp
 
         npm link @babel/core @babel/preset-env babel-loader autoprefixer copy-webpack-plugin css-loader css-mqpacker cssnano file-loader gulp gulp-cheerio gulp-replace gulp-svg-sprite gulp-svgmin html-webpack-plugin mini-css-extract-plugin node-sass postcss-loader pug pug-loader pug-plain-loader sass-loader style-loader vue-loader vue-style-loader vue-template-compiler webpack webpack-cli webpack-dev-server webpack-merge ismobilejs jquery
 
-#### 3. Server with hot reload at http://localhost:8081/
+#### 4. Server with hot reload at http://localhost:8081/
 
     npm run dev
 
-#### 4. Output will be at dist/ folder
+#### 5. Output will be at dist/ folder
 
     npm run build
 
-#### 5. Build svg-sprite
+#### 6. Build svg-sprite
 
 Put your icons into /src/assets/img/icons folder & run task:
 
     gulp svgSpriteBuild
 
-#### 6. Vue
+#### 7. Vue
 1. Install vue
 ``` bash
 npm install vue --save
@@ -57,13 +59,13 @@ Create your component in `/components/`
 	example-component
 	```
 
-#### 7. How to test
+#### 8. How to test
 
 1. Install packages
 
-        npm i chrome-launcher fs http node-static path pixelmatch pngjs puppeteer image-webpack-loader -g
+        npm i chrome-launcher fs http node-static path pixelmatch pngjs puppeteer imagemin-mozjpeg imagemin-webpack-plugin -g
 
-        npm link chrome-launcher fs http node-static path pixelmatch pngjs puppeteer image-webpack-loader
+        npm link chrome-launcher fs http node-static path pixelmatch pngjs puppeteer imagemin-mozjpeg imagemin-webpack-plugin
 
 2. Open `gulpfile.js`. Uncomment "testing" task & Add all names of tested pages to array `pageList` 
 
@@ -71,7 +73,7 @@ Create your component in `/components/`
 
 4. Run task `gulp test-compare` to compare current state of the pages with the reference
 
-#### 8. Folder and file structure
+#### 9. Folder and file structure
 ```
 ├── build/                     # Webpack configs
 ├── helpers/                   # Helpers
