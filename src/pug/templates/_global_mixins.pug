@@ -35,9 +35,9 @@ mixin head(array)
 
 mixin image(array)
 	- alt = array.alt || ''
-	if array.picture
+	if array.srcsetArray
 		picture
-			each item in array.srcset
+			each item in array.srcsetArray
 				source(srcset=`${assetsImage}${item.img}`, media=item.media)
 			img(class= array.class, src=`${assetsImage}${array.img}`, alt= alt)
 	else
