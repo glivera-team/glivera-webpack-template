@@ -5,6 +5,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 const webpack = require('webpack');
+var ImageminPlugin = require('imagemin-webpack-plugin').default;
+const imageminMozjpeg = require('imagemin-mozjpeg');
 
 // Main const
 const PATHS = {
@@ -77,7 +79,7 @@ module.exports = {
         name: '[name].[ext]'
       }
     }, {
-      test: /\.(png|jpg|gif|svg)$/,
+      test: /\.(png|jpe?g|gif|svg)$/i,
       loader: 'file-loader',
       options: {
         name: '[name].[ext]'
@@ -141,6 +143,27 @@ module.exports = {
       { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
       { from: `${PATHS.src}/static`, to: '' },
     ]),
+		new ImageminPlugin({
+			test: /\.(jpe?g|png|gif|svg)$/i,
+			disable: false,
+			pngquant: {
+				speed: 1,
+				quality: [0.95, 1]
+			},
+			svgo: {
+				removeViewBox: false
+			},
+			svgo: {
+				removeViewBox: false
+			},
+			gifsicle: {
+				interlaced: true,
+				optimizationLevel: 3
+			},
+			plugins: [
+				imageminMozjpeg({quality: 50})
+			]
+		}),
 
     // Automatic creation any html pages (Don't forget to RERUN dev server)
     ...PAGES.map(page => new HtmlWebpackPlugin({
