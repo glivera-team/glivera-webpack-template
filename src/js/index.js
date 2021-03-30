@@ -8,15 +8,13 @@ import isMobile from 'ismobilejs';
 import './libs/fastdom.min'
 
 // ------------------  components
-// import './components/filename.js'
+import testFunc from "./components/test";
 
 //-------------------  dev
-import './dev_vendors/dev_functions'
-
-
+// import './dev_vendors/dev_functions'
 
 // -------------------  global variables
-var $body,
+let $body,
 		windowHeight,
 		windowWidth,
 		isMobileData,
@@ -34,6 +32,7 @@ $(document).ready(function ($) {
 $(window).on('load', function () {
 	updateSizes();
 	loadFunc();
+	testFunc();
 });
 
 $(window).on('resize', function () {
@@ -59,7 +58,7 @@ function scrollFunc() {
 
 function calcViewportHeight() {
 	if (isMobileData.apple.phone || isMobileData.android.phone || isMobileData.seven_inch) {
-		var vh = window.innerHeight * 0.01;
+		let vh = window.innerHeight * 0.01;
 		// var vh2 = document.documentElement.clientHeight * 0.01;
 
 		document.documentElement.style.setProperty('--vh', vh + 'px');
@@ -89,7 +88,7 @@ function getRandom(min, max) {
 	return Math.random() * (max - min) + min;
 }
 
-var styles = ['color: #fff', 'background: #cf8e1f'].join(';');
-var message = 'Developed by Glivera-team https://glivera-team.com/';
+let styles = ['color: #fff', 'background: #cf8e1f'].join(';');
+let message = 'Developed by Glivera-team https://glivera-team.com/';
 
 console.info('%c%s', styles, message);

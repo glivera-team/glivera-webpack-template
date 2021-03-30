@@ -78,11 +78,12 @@ $(function () {
 	console.log("dev functions loaded");
 
 	getAllClasses('html','.elements_list');
-	if (typeof pageWidgetArray !== 'undefined' && pageWidgetArray.length > 0) {
-		pageWidget(pageWidgetArray);
-	}
+	pageWidget(pageWidgetArray);
+	// if (typeof pageWidgetArray !== 'undefined' && pageWidgetArray.length > 0) {
+	// 	pageWidget(pageWidgetArray);
+	// }
 });
 
 // developer funcitons
-pageWidget(['index']);
+pageWidget(['index', 'blog']);
 getAllClasses('html','.elements_list');
