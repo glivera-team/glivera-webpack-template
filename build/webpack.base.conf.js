@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 const webpack = require('webpack');
-var ImageminPlugin = require('imagemin-webpack-plugin').default;
+let ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminMozjpeg = require('imagemin-mozjpeg');
 
 // Main const
@@ -58,8 +58,8 @@ module.exports = {
         // this applies to pug imports inside JavaScript
         {
           use: ['pug-loader']
-        }
-      ]
+        },
+      ],
     }, {
       test: /\.js$/,
       loader: 'babel-loader',
@@ -149,9 +149,6 @@ module.exports = {
 			pngquant: {
 				speed: 1,
 				quality: [0.95, 1]
-			},
-			svgo: {
-				removeViewBox: false
 			},
 			svgo: {
 				removeViewBox: false
