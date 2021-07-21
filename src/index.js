@@ -7,7 +7,6 @@ import './assets/scss/main_global.scss';
 // CSS (example)
 // import './assets/css/main.css'
 
-
 // Vue.js
 // window.Vue = require('vue');
 
