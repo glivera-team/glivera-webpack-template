@@ -26,6 +26,9 @@ module.exports = {
 	// BASE config
 	externals: {
 		paths: PATHS,
+		pages: path.join(__dirname, '../src'),
+		// fs: fs,
+		// path: path,
 	},
 	entry: {
 		app: PATHS.src,
@@ -150,6 +153,10 @@ module.exports = {
 			jQuery: 'jquery',
 			'window.$': 'jquery',
 			'window.jQuery': 'jquery',
+		}),
+		new webpack.DefinePlugin({
+			PRODUCTION: JSON.stringify(true),
+			PAGES: JSON.stringify(PAGES),
 		}),
 		new VueLoaderPlugin(),
 		new MiniCssExtractPlugin({

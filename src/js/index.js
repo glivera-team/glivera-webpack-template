@@ -5,41 +5,41 @@ window.$ = $;
 import isMobile from 'ismobilejs';
 
 //-------------------  libs
-import './libs/fastdom.min'
+import './libs/fastdom.min';
 
 // ------------------  components
-import testFunc from "./components/test";
+import testFunc from './components/test';
 
 //-------------------  dev
-// import './dev_vendors/dev_functions'
+import './dev_vendors/dev_functions';
 
 // -------------------  global variables
 let $body,
-		windowHeight,
-		windowWidth,
-		isMobileData,
-		degree = 0.0174532925,
-		mediaPoint1 = 1024,
-		mediaPoint2 = 768,
-		mediaPoint3 = 480,
-		mediaPoint4 = 320;
+	windowHeight,
+	windowWidth,
+	isMobileData,
+	degree = 0.0174532925,
+	mediaPoint1 = 1024,
+	mediaPoint2 = 768,
+	mediaPoint3 = 480,
+	mediaPoint4 = 320;
 
-$(document).ready(function ($) {
+$(document).ready(function($) {
 	isMobileData = isMobile();
 	$body = $('body');
 });
 
-$(window).on('load', function () {
+$(window).on('load', function() {
 	updateSizes();
 	loadFunc();
 	testFunc();
 });
 
-$(window).on('resize', function () {
+$(window).on('resize', function() {
 	resizeFunc();
 });
 
-$(window).on('scroll', function () {
+$(window).on('scroll', function() {
 	scrollFunc();
 });
 
@@ -53,11 +53,14 @@ function resizeFunc() {
 	calcViewportHeight();
 }
 
-function scrollFunc() {
-}
+function scrollFunc() {}
 
 function calcViewportHeight() {
-	if (isMobileData.apple.phone || isMobileData.android.phone || isMobileData.seven_inch) {
+	if (
+		isMobileData.apple.phone ||
+		isMobileData.android.phone ||
+		isMobileData.seven_inch
+	) {
 		let vh = window.innerHeight * 0.01;
 		// var vh2 = document.documentElement.clientHeight * 0.01;
 
@@ -71,12 +74,26 @@ function updateSizes() {
 }
 
 if ('objectFit' in document.documentElement.style === false) {
-	document.addEventListener('DOMContentLoaded', function () {
-		Array.prototype.forEach.call(document.querySelectorAll('img[data-object-fit]'), function (image) {
-			(image.runtimeStyle || image.style).background = 'url("' + image.src + '") no-repeat 50%/' + (image.currentStyle ? image.currentStyle['object-fit'] : image.getAttribute('data-object-fit'));
+	document.addEventListener('DOMContentLoaded', function() {
+		Array.prototype.forEach.call(
+			document.querySelectorAll('img[data-object-fit]'),
+			function(image) {
+				(image.runtimeStyle || image.style).background =
+					'url("' +
+					image.src +
+					'") no-repeat 50%/' +
+					(image.currentStyle
+						? image.currentStyle['object-fit']
+						: image.getAttribute('data-object-fit'));
 
-			image.src = 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'' + image.width + '\' height=\'' + image.height + '\'%3E%3C/svg%3E';
-		});
+				image.src =
+					"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='" +
+					image.width +
+					"' height='" +
+					image.height +
+					"'%3E%3C/svg%3E";
+			}
+		);
 	});
 }
 
