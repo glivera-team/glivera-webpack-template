@@ -20,7 +20,7 @@ Project template for quick start. This template uses Webpack, Pug, Sass, Gulp
 
 Put your icons into /src/assets/img/icons folder & run task:
 
-    gulp svgSpriteBuild
+    npm run sprite
 
 #### 6. Vue
 

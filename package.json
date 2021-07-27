@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --open --config ./build/webpack.dev.conf.js",
     "build": "webpack --config ./build/webpack.build.conf.js",
-    "svgSpriteBuild": "gulp svgSpriteBuild"
+    "sprite": "gulp svgSpriteBuild"
   },
   "browserslist": [
     "> 1%",
