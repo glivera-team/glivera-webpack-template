@@ -9,9 +9,9 @@
 	//remove this demo style
 	&.demo_mod {
 		@extend %global_flex_block_column_nowrap_center_center;
-		
-		height: calc(100vh - #{$height_footer + $height_header});
-		
+
+		height: calc(100vh - (var(--height-footer) + var(--height-header)));
+
 		color: $white;
 		text-align: center;
 

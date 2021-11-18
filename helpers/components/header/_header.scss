@@ -17,8 +17,8 @@
 	top: 0;
 	left: 100%;
 	width: 100%;
-	height: $height_header;
-	padding: 0 $gl_indent;
+	height: var(--height-header);
+	padding: 0 var(--gl-indent);
 	border-bottom: 1px solid gray;
 }
 
@@ -52,13 +52,13 @@
 		width: 100%;
 		flex: 0 0 auto;
 		flex-direction: column;
-		padding: $height_header $gl_indent;
+		padding: var(--height-header) var(--gl-indent);
 		margin: auto;
 	}
 }
 
 .header_menu_item {
-	padding: 0 0 0 $gl_indent;
+	padding: 0 0 0 var(--gl-indent);
 
 	&:first-child {
 		padding: 0;
@@ -104,7 +104,7 @@
 	z-index: 210;
 	position: absolute;
 	top: 50%;
-	right: $gl_indent;
+	right: var(--gl-indent);
 	display: none; // hidden on wide screens
 	height: 2.6rem;
 	width: 3.8rem;
